@@ -1,0 +1,30 @@
+{
+	"manifest_version": 2,
+	"name": "Orwell",
+	"version": "0.1",
+	"description": "Блокировщик сайтов на время работы",
+	"icons": { 
+		"64": "icons/logo.png" 
+	},
+	"author": "Fedorov Roman",
+	"browser_action": {
+		"default_title": "Блокировщик сайтов на время работы",
+		"default_icon": "icons/logo.png",
+		"default_popup": "index.html"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"<all_urls>"
+			],
+			"js": [
+				"js/content.js"
+			]
+		}
+	],
+	"permissions": [
+		"tabs",
+		"activeTab",
+		"storage"
+	]
+}
